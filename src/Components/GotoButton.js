@@ -3,7 +3,7 @@ import {Text,Button,View} from 'react-native';
 
  const GotoButton = ({title,onPress}) => {
   return (
-    <View style={{marginTop:50}}>
+    <View style={{marginTop:20}}>
       <Button title={title} onPress={onPress}/>
     </View>
   );

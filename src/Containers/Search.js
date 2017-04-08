@@ -2,6 +2,7 @@ import SearchBox from '../Components/SearchBox';
 import SearchButton from '../Components/SearchButton';
 import React, {PropTypes} from 'react';
 import {Text,View} from 'react-native';
+import {Container,InputGroup} from 'native-base';
 
 export default class Search extends React.Component {
   constructor(){
@@ -28,7 +29,7 @@ export default class Search extends React.Component {
   }
   render() {
     return (
-      <View>
+      <View style={{alignItems:'center',marginLeft:20,marginRight:20}}>
         <SearchBox onChange={this.handleTextChange.bind(this)}/>
         <SearchButton onPress={this.searchUser} title="Search" />
       </View>

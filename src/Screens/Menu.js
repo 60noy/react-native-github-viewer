@@ -10,10 +10,6 @@ export default class Menu extends React.Component {
   }
 
   navigate(screen){
-    let userProfile = this.props.user
-    for (item in userProfile) {
-      console.log(userProfile[item])
-    }
     this.props.navigator.push({
       name:screen,
       passProps:{
@@ -38,6 +34,10 @@ export default class Menu extends React.Component {
             title="View Profile"
             onPress={() => this.navigate('UserProfileScreen')}
           />
+          <GotoButton
+            title="View Repositories"
+            onPress={() => this.navigate('ReposScreen')}
+          />
 
     </View>
   );
@@ -45,4 +45,5 @@ export default class Menu extends React.Component {
 }
 
 Menu.propTypes = {
+  user: PropTypes.object.isRequired
 };

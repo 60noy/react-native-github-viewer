@@ -1,12 +1,18 @@
 import React, {PropTypes} from 'react';
-import {Button,Text} from 'react-native';
+import {Button,Text} from 'native-base';
 
 const SearchButton = ({onPress,title}) => {
   return (
     <Button
+      rounded
     onPress={onPress}
-    title={title}
-    />
+    style={{alignSelf: 'center', marginTop:10,backgroundColor: '#ecf0f1'}}
+    >
+    <Text style={{color:"#34495e"}}>
+      FIND USER
+    </Text>
+
+  </Button>
   );
 }
 

@@ -1,9 +1,10 @@
 import React, {PropTypes} from 'react';
-import {View, Text, Navigator, Button} from 'react-native';
+import {View, Text, Navigator} from 'react-native';
 import Home from './Screens/Home';
 import UserProfile from './Screens/UserProfile';
 import Menu from './Screens/Menu';
-
+import Repos from './Screens/Repos';
+import {Header,Button,Icon} from 'native-base';
 class App extends React.Component {
   constructor(){
     super()
@@ -17,24 +18,24 @@ class App extends React.Component {
       return <UserProfile navigator={navigator} {...route.passProps}/>
     if(route.name == 'MenuScreen')
       return <Menu navigator={navigator} {...route.passProps}/>
+    if(route.name == 'ReposScreen')
+      return <Repos navigator={navigator} {...route.passProps}/>
   }
   render() {
     return (
       <Navigator
       initialRoute={{name:'HomeScreen'}}
       renderScene={this.renderScene}
-      sceneStyle={{paddingTop: 64}}
       navigationBar={
         <Navigator.NavigationBar
           routeMapper={{
             LeftButton: (route,navigator,index,navState) =>
-            <View><Text>Back</Text></View>,
+            <Button onPress={() => navigator.pop()}><Icon name='ios-arrow-back'/></Button>,
             RightButton: (route,navigator,index,navState) =>
             <View><Text>right</Text></View>,
             Title: (route,navigator,index,navState) =>
             <View><Text>{route.name}</Text></View>,
           }}
-          style={{backgroundColor: 'gray'}}
         />
       }
     />
