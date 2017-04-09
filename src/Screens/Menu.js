@@ -10,11 +10,12 @@ export default class Menu extends React.Component {
     this.navigate = this.navigate.bind(this);
   }
 
-  navigate(screen){
+  navigate(screen,title){
     this.props.navigator.push({
       name:screen,
       passProps:{
-        user: this.props.user
+        user: this.props.user,
+        title:title
       }
     })
   }
@@ -29,20 +30,20 @@ export default class Menu extends React.Component {
           <GotoButton
             title="View Profile"
             full danger
-            onPress={() => this.navigate('UserProfileScreen')}
+            onPress={() => this.navigate('UserProfileScreen','Profile')}
           />
 
           <GotoButton
             full
             info
             title="View Repositories"
-            onPress={() => this.navigate('ReposScreen')}
+            onPress={() => this.navigate('ReposScreen','Repositories')}
           />
 
           <GotoButton
             full success
             title="View Notes"
-            onPress={() => this.navigate('NotesScreen')}
+            onPress={() => this.navigate('NotesScreen','Notes')}
           />
         </View>
 

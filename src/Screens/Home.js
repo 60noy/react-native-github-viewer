@@ -6,13 +6,13 @@ export default class Home extends React.Component {
   constructor(){
     super();
     this.handleUserNotFound = this.handleUserNotFound.bind(this);
-
   }
 
   handleUserPage(screen,userData){
     this.props.navigator.push(
       {name: screen, passProps: {
-        user: userData
+        user: userData,
+        title: userData.name
       }
       })
   }
@@ -24,9 +24,7 @@ export default class Home extends React.Component {
   render() {
     return (
       <View style={{backgroundColor:'#03A9F4', flex:1,flexDirection:'column',
-        alignItems:'center',
-        justifyContent:'center'
-}}>
+        alignItems:'center',justifyContent:'center'}}>
                   <Search navigateToUserPage={this.handleUserPage.bind(this,'MenuScreen')}
                     showError={this.handleUserNotFound}/>
      </View>

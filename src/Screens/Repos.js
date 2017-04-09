@@ -9,7 +9,7 @@ export default class Repos extends React.Component {
 
   render() {
       return (
-        <View>
+        <View style={{marginTop:30}}>
           <SharedHeader profileImage={this.props.user.avatar_url}
           username={this.props.user.login}
           name={this.props.user.name}/>

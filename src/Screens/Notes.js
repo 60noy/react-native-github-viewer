@@ -28,7 +28,7 @@ export default class Notes extends React.Component {
   render() {
     let notes = this.state.notes
     return (
-      <View style={{flex: 1}}>
+      <View style={{flex: 1,marginTop:30}}>
         <Container>
         <SharedHeader profileImage={this.props.user.avatar_url}
         username={this.props.user.login}
