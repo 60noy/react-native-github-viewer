@@ -1,11 +1,12 @@
 import React, {PropTypes} from 'react';
-import {Text,Button,View} from 'react-native';
+import {View} from 'react-native';
+import {Text,Button} from 'native-base';
 
- const GotoButton = ({title,onPress}) => {
+ const GotoButton = (props) => {
   return (
-    <View style={{marginTop:20}}>
-      <Button title={title} onPress={onPress}/>
-    </View>
+      <Button {...props} large onPress={props.onPress}>
+        <Text>{props.title}</Text>
+      </Button>
   );
 }
 

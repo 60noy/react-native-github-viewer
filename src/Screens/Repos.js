@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import GetRepos from '../Containers/GetRepos';
+import SharedHeader from '../Components/SharedHeader';
 import {View} from 'react-native';
 export default class Repos extends React.Component {
   constructor(props) {
@@ -9,6 +10,9 @@ export default class Repos extends React.Component {
   render() {
       return (
         <View>
+          <SharedHeader profileImage={this.props.user.avatar_url}
+          username={this.props.user.login}
+          name={this.props.user.name}/>
           <GetRepos username={this.props.user.login}/>
         </View>
       );

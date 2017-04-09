@@ -11,7 +11,7 @@ export default class ProfileDetailList extends React.Component {
   render() {
     let arr = Object.entries(this.props.user)
     return (
-      <View>
+      <View style={{paddingLeft:14}}>
         <ListView
           renderRow={(rowData) =>
             !!rowData[1] &&

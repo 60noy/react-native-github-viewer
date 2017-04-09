@@ -4,11 +4,11 @@ import {InputGroup,Input} from 'native-base';
 const SearchBox = ({onChange}) => {
   return (
     <InputGroup rounded bordered
-      onChangeText={onChange}
       borderColor="#fff"
       borderWidth={1}
       >
-        <Input style={{color:'white'}} placeholder="Enter Github Username" placeholderTextColor="#fff"/>
+        <Input style={{color:'white'}} placeholder="Enter Github Username" placeholderTextColor="#fff"
+        onChangeText={onChange}/>
       </InputGroup>
 );
 }

@@ -4,6 +4,7 @@ import Home from './Screens/Home';
 import UserProfile from './Screens/UserProfile';
 import Menu from './Screens/Menu';
 import Repos from './Screens/Repos';
+import Notes from './Screens/Notes';
 import {Header,Button,Icon} from 'native-base';
 class App extends React.Component {
   constructor(){
@@ -20,6 +21,8 @@ class App extends React.Component {
       return <Menu navigator={navigator} {...route.passProps}/>
     if(route.name == 'ReposScreen')
       return <Repos navigator={navigator} {...route.passProps}/>
+    if(route.name == 'NotesScreen')
+      return <Notes navigator={navigator} {...route.passProps}/>
   }
   render() {
     return (

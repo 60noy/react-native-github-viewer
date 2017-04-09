@@ -17,9 +17,9 @@ export default class ReposDetailList extends React.Component {
           renderRow={(rowData) =>{
             !!rowData
             return (<ReposDetailItem
-              primary={"prip"}
-              secondary={"rowData.stargazers_count"}
-              text={"rowData.description"}
+              primary={rowData.name}
+              secondary={rowData.stargazers_count}
+              text={rowData.description}
             />)
             }
           }
@@ -32,6 +32,6 @@ export default class ReposDetailList extends React.Component {
 
 ReposDetailList.propTypes = {
   repos: PropTypes.array.isRequired,
-  secondary: PropTypes.number.isRequired,
-  text: PropTypes.string.isRequired
+  secondary: PropTypes.number,
+  text: PropTypes.string
 };

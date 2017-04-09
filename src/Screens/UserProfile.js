@@ -10,12 +10,12 @@ export default class UserProfile extends React.Component {
     render() {
       console.log('userprofile user',this.props.user);
         return (
-            <View>
+            <View style={{flex:1}}>
 
               <SharedHeader
                 profileImage={this.props.user.avatar_url}
-                name={this.props.user.name}
                 username={this.props.user.login}
+                name={this.props.user.name}
                />
 
                <ProfileDetailList user={this.props.user}/>
